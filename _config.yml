@@ -29,7 +29,8 @@ url: "https://xmpp-interop-testing.github.io" # the base hostname & protocol for
 github_username:  XMPP-Interop-Testing
 
 # Build settings
-theme: minima
+#theme: minima
+remote_theme: daattali/beautiful-jekyll@6.0.1
 plugins:
   - jekyll-feed
 
@@ -52,3 +53,9 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+navbar-links:
+  Sponsors: sponsors
+
+avatar: "/assets/img/nlnet.hex.svg"
+round-avatar: false
