@@ -62,3 +62,9 @@ round-avatar: false
 
 social-network-links:
   github: XMPP-Interop-Testing
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - .gitignore
