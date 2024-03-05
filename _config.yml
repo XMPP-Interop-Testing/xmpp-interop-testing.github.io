@@ -59,3 +59,6 @@ navbar-links:
 
 avatar: "/assets/img/nlnet.hex.svg"
 round-avatar: false
+
+social-network-links:
+  github: XMPP-Interop-Testing
