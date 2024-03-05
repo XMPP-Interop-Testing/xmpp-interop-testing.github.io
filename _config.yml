@@ -30,7 +30,7 @@ github_username:  XMPP-Interop-Testing
 
 # Build settings
 #theme: minima
-remote_theme: daattali/beautiful-jekyll@6.0.1
+remote_theme: daattali/beautiful-jekyll@18fda2d746a434bbebabff1514f0d3471509efdc
 plugins:
   - jekyll-feed
 
