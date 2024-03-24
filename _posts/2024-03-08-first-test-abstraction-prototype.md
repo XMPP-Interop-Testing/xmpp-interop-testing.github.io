@@ -34,7 +34,7 @@ Very generically, the xmpp-interop-test-action is expected to be part of such a 
 4. Stop server
 
 This could look something like the flow below:
-
+{% raw  %}
 ```yaml
 - name: Download Server distribution artifact from build job.
   uses: actions/download-artifact@v4
@@ -57,6 +57,7 @@ This could look something like the flow below:
   if: ${{ always() && steps.startCIServer.conclusion == 'success' }}
   uses: ./.github/actions/stopserver-action
 ```
+{% endraw  %}
 
 Of course, we've immediately modified the continuous integration flow of our own XMPP server to make use of
 `xmpp-interop-tests-action`. The proof of the pudding is in the tasting, after all! It worked!
