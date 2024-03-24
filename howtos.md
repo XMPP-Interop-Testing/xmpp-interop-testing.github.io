@@ -1,0 +1,29 @@
+---
+layout: page
+title: HOWTOs
+subtitle: How to test a server implementation for standards compliance using this project
+---
+
+_This page is a work in progress. Please bear with us whilst we get our documentation together._
+
+If you'd like to learn how to integrate XMPP standards conformance tests on your site, pick your CI system below:
+
+{:style="text-align:center;"}
+[![GitHub](/assets/img/GitHub-logo.png){: width="150" }](/howtos/github.html)
+<br/>
+
+{:style="text-align:center;"}
+[![GitLab](/assets/img/GitLab-logo.png){: width="150" }](/howtos/gitlab.html)
+<br/>
+
+{:style="text-align:center;"}
+[![Circle CI](/assets/img/CircleCI-logo.png){: width="150" }](/howtos/circleci.html)
+<br/>
+
+{:style="text-align:center;"}
+[![Bamboo](/assets/img/bamboo-logo.jpg){: width="150" }](/howtos/bamboo.html)
+<br/>
+
+{:style="text-align:center;"}
+[![Docker](/assets/img/Docker-logo.png){: width="150" }](/howtos/docker.html)
+<br/>
