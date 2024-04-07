@@ -4,7 +4,6 @@ title:  "Testing in Github"
 cover-img: /assets/img/github_splash.jpg
 date:   2024-02-18 19:45:53 +0000
 author: Dan Caseley
-permalink: /howtos/github
 ---
 
 _This page is a work in progress. Please bear with us whilst we get our documentation together._
