@@ -9,21 +9,21 @@ _This page is a work in progress. Please bear with us whilst we get our document
 If you'd like to learn how to integrate XMPP standards conformance tests on your site, pick your CI system below:
 
 {:style="text-align:center;"}
-[![GitHub](/assets/img/GitHub-logo.png){: width="150" }](/howtos/github.html)
+[![GitHub](/assets/img/GitHub-logo.png){: width="150" }](/howtos/github)
 <br/>
 
 {:style="text-align:center;"}
-[![GitLab](/assets/img/GitLab-logo.png){: width="150" }](/howtos/gitlab.html)
+[![GitLab](/assets/img/GitLab-logo.png){: width="150" }](/howtos/gitlab)
 <br/>
 
 {:style="text-align:center;"}
-[![Circle CI](/assets/img/CircleCI-logo.png){: width="150" }](/howtos/circleci.html)
+[![Circle CI](/assets/img/CircleCI-logo.png){: width="150" }](/howtos/circleci)
 <br/>
 
 {:style="text-align:center;"}
-[![Bamboo](/assets/img/bamboo-logo.jpg){: width="150" }](/howtos/bamboo.html)
+[![Bamboo](/assets/img/bamboo-logo.jpg){: width="150" }](/howtos/bamboo)
 <br/>
 
 {:style="text-align:center;"}
-[![Docker](/assets/img/Docker-logo.png){: width="150" }](/howtos/docker.html)
+[![Docker](/assets/img/Docker-logo.png){: width="150" }](/howtos/docker)
 <br/>

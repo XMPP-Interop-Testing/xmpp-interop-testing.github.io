@@ -73,7 +73,7 @@ exclude:
 collections:
   howtos:
     output: true
-    permalink: /howtos/:path/
+    permalink: /:collection/:name
 
 site-css:
   - "/assets/css/custom-styles.css"
