@@ -56,7 +56,7 @@ plugins:
 
 navbar-links:
   Sponsors: sponsors
-  Howtos: howtos
+  Documentation: documentation
 
 avatar: "/assets/img/nlnet.hex.svg"
 round-avatar: false
@@ -71,7 +71,7 @@ exclude:
   - .gitignore
 
 collections:
-  howtos:
+  documentation:
     output: true
     permalink: /:collection/:name
 
