@@ -6,8 +6,6 @@ date:   2024-02-18 19:45:53 +0000
 author: Dan Caseley
 ---
 
-_This page is a work in progress. Please bear with us whilst we get our documentation together._
-
 ## Introduction
 
 This guide is intended for XMPP Server developers who building on Github Actions. It demonstrates how to add XMPP Interoperability and Standards Conformance tests integrated into a build & test pipeline. This assumes that you already have a pipeline established, and wish to add the additional checks.
