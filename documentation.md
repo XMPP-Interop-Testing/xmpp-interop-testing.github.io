@@ -6,6 +6,8 @@ subtitle: How to test a server implementation for standards compliance using thi
 
 _This page is a work in progress. Please bear with us whilst we get our documentation together._
 
+## Installation & Configuration
+
 If you'd like to learn how to integrate XMPP standards conformance tests on your site, pick your CI system below:
 
 {:style="text-align:center;"}
@@ -27,3 +29,7 @@ If you'd like to learn how to integrate XMPP standards conformance tests on your
 {:style="text-align:center;"}
 [![Docker](/assets/img/Docker-logo.png){: width="150" }](/documentation/docker)
 <br/>
+
+## Usage
+
+- [Diagnose test failures](documentation/diagnose-test-failures)
