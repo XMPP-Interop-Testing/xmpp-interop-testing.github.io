@@ -23,5 +23,5 @@ If you'd like to learn how to integrate XMPP standards conformance tests on your
 
 ## Usage
 
-- [Diagnose test failures](documentation/diagnose-test-failures)
-- [Choosing what test to run](documentation/selecting-tests)
+- [Diagnose test failures](/documentation/diagnose-test-failures)
+- [Choosing what test to run](/documentation/selecting-tests)
