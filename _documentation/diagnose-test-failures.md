@@ -31,18 +31,18 @@ status of tests that have executed in their console output.
 A considerable part of the logs will be lines that show that a test has started, and that it concluded, either successfully:
 ```
 May 15, 2024 5:46:27 PM org.igniterealtime.smack.inttest.SmackIntegrationTestFramework runConcreteTest
-INFO: ServiceDiscoveryIntegrationTest.testQueryInfoNonExistingBareJidClientEntityWithNode (Normal) Start
+INFO: DiscoIntegrationTest.testNonExisting (Normal) Start
 May 15, 2024 5:46:27 PM org.igniterealtime.smack.inttest.SmackIntegrationTestFramework runConcreteTest
-INFO: ServiceDiscoveryIntegrationTest.testQueryInfoNonExistingBareJidClientEntityWithNode (Normal) Success
+INFO: DiscoIntegrationTest.testNonExisting (Normal) Success
 ```
 
 ... or unsuccessfully:
 
 ```
 May 15, 2024 5:46:27 PM org.igniterealtime.smack.inttest.SmackIntegrationTestFramework runConcreteTest
-INFO: ServiceDiscoveryIntegrationTest.testQueryInfoWithoutPresenceSubscriptionBareJidWithoutNode (Normal) Start
+INFO: DiscoIntegrationTest.testInfoNoSub (Normal) Start
 May 15, 2024 5:46:27 PM org.igniterealtime.smack.inttest.SmackIntegrationTestFramework runConcreteTest
-SEVERE: ServiceDiscoveryIntegrationTest.testQueryInfoWithoutPresenceSubscriptionBareJidWithoutNode (Normal) Failed
+SEVERE: DiscoIntegrationTest.testInfoNoSub (Normal) Failed
 ```
 
 Near the end of the log file, the console will print how many tests were executed, and how many of those tests failed:
@@ -58,11 +58,11 @@ assertion that failed, such as this one:
 
 ```
 May 15, 2024 5:46:45 PM org.igniterealtime.smack.inttest.SmackIntegrationTestFramework$JulTestRunResultProcessor process
-SEVERE: ServiceDiscoveryIntegrationTest.testQueryInfoWithoutPresenceSubscriptionBareJidWithoutNode (Normal) failed: org.opentest4j.AssertionFailedError: Expected the disco#info request from 'smack-inttest-one-muy28@example.org/one-muy28' to 'smack-inttest-two-muy28@example.org' (which has not granted presence subscription to the requestor) to be responded to with an error (but it was not).
+SEVERE: DiscoIntegrationTest.testInfoNoSub (Normal) failed: org.opentest4j.AssertionFailedError: Expected the disco#info request from 'smack-inttest-one-muy28@example.org/one-muy28' to 'smack-inttest-two-muy28@example.org' (which has not granted presence subscription to the requestor) to be responded to with an error (but it was not).
 org.opentest4j.AssertionFailedError: Expected the disco#info request from 'smack-inttest-one-muy28@example.org/one-muy28' to 'smack-inttest-two-muy28@example.org' (which has not granted presence subscription to the requestor) to be responded to with an error (but it was not).
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
 	at org.junit.jupiter.api.Assertions.fail(Assertions.java:109)
-	at org.igniterealtime.smack.inttest.xep0030.ServiceDiscoveryIntegrationTest.testQueryInfoWithoutPresenceSubscriptionBareJidWithoutNode(ServiceDiscoveryIntegrationTest.java:371)
+	at org.igniterealtime.smack.inttest.xep0030.DiscoIntegrationTest.testInfoNoSub(DiscoIntegrationTest.java:371)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -77,7 +77,7 @@ org.opentest4j.AssertionFailedError: Expected the disco#info request from 'smack
 
 From the first two lines of the above, two key bits of information can be deduced:
 
-1. The name of the test that failed: `ServiceDiscoveryIntegrationTest.testQueryInfoWithoutPresenceSubscriptionBareJidWithoutNode (Normal)`
+1. The name of the test that failed: `DiscoIntegrationTest.testInfoNoSub (Normal)`
 2. The assertion that failed is: 
    > Expected the disco#info request from 'smack-inttest-one-muy28@example.org/one-muy28' to 'smack-inttest-two-muy28@example.org' (which has not granted presence subscription to the requestor) to be responded to with an error (but it was not).
 
@@ -85,14 +85,14 @@ Finally, at the end of log, there a summary is provided of the specifications th
 
 ```
 SEVERE: The failed tests correspond to the following specifications:
-- XEP-0030 (version 2.5.0) section 8:	"The following rule[s] apply to the handling of service discovery requests sent to bare JIDs: In response to a disco#info request, the server MUST return a <service-unavailable/> error if [...] [t]he requesting entity is not authorized to receive presence from the target entity." (as tested by 'ServiceDiscoveryIntegrationTest.testQueryInfoWithoutPresenceSubscriptionBareJidWithoutNode (Normal)')
+- XEP-0030 (version 2.5.0) section 8:	"The following rule[s] apply to the handling of service discovery requests sent to bare JIDs: In response to a disco#info request, the server MUST return a <service-unavailable/> error if [...] [t]he requesting entity is not authorized to receive presence from the target entity." (as tested by 'DiscoIntegrationTest.testInfoNoSub (Normal)')
 ```
 
 Each line contains these bits of information:
 - A reference to the specification (and section) identifier: `XEP-0030 (version 2.5.0) section 8`
 - A quote of the specification that in more detail describes the functionality that is subject of the (failed) test:
   > The following rule[s] apply to the handling of service discovery requests sent to bare JIDs: In response to a disco#info request, the server MUST return a <service-unavailable/> error if [...] [t]he requesting entity is not authorized to receive presence from the target entity.
-- The name of the test that failed: `(as tested by 'ServiceDiscoveryIntegrationTest.testQueryInfoWithoutPresenceSubscriptionBareJidWithoutNode (Normal)')`
+- The name of the test that failed: `(as tested by 'DiscoIntegrationTest.testInfoNoSub (Normal)')`
 
 ### Referencing the XMPP traffic
 
@@ -104,7 +104,7 @@ Each test will log its traffic in a distinct file. The name of the file matches 
 in the working directory of the test execution.
 
 For the failed test that is used in the example above, the XMPP data will be stored in a file named 
-`ServiceDiscoveryIntegrationTest.testQueryInfoWithoutPresenceSubscriptionBareJidWithoutNode (Normal).log`
+`DiscoIntegrationTest.testInfoNoSub (Normal).log`
 
 The log files are typically quite full of data, as most tests generate quite a bit of XMPP traffic. The composition of
 each file is the same. Each file contains of fragments like these two taken from the log file that we were using as an
