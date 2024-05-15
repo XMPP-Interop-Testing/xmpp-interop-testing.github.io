@@ -11,23 +11,14 @@ _This page is a work in progress. Please bear with us whilst we get our document
 If you'd like to learn how to integrate XMPP standards conformance tests on your site, pick your CI system below:
 
 {:style="text-align:center;"}
-[![GitHub](/assets/img/GitHub-logo.png){: width="150" }](/documentation/github)
+[![GitHub](/assets/img/GitHub-logo.png){: height="150" }{:style="margin: 0 1em" }](/documentation/github)
+[![GitLab](/assets/img/GitLab-logo.png){: height="150" }{:style="margin: 0 1em" }](/documentation/gitlab)
+[![Circle CI](/assets/img/CircleCI-logo.png){: height="150" }{:style="margin: 0 1em" }](/documentation/circleci)
 <br/>
 
 {:style="text-align:center;"}
-[![GitLab](/assets/img/GitLab-logo.png){: width="150" }](/documentation/gitlab)
-<br/>
-
-{:style="text-align:center;"}
-[![Circle CI](/assets/img/CircleCI-logo.png){: width="150" }](/documentation/circleci)
-<br/>
-
-{:style="text-align:center;"}
-[![Bamboo](/assets/img/bamboo-logo.jpg){: width="150" }](/documentation/bamboo)
-<br/>
-
-{:style="text-align:center;"}
-[![Docker](/assets/img/Docker-logo.png){: width="150" }](/documentation/docker)
+[![Bamboo](/assets/img/bamboo-logo.jpg){: height="150" }{:style="margin: 0 1em" }](/documentation/bamboo)
+[![Docker](/assets/img/Docker-logo.png){: height="150" }{:style="margin: 0 1em" }](/documentation/docker)
 <br/>
 
 ## Usage
