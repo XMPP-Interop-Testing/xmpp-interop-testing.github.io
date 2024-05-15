@@ -47,11 +47,15 @@ SEVERE: DiscoIntegrationTest.testInfoNoSub (Normal) Failed
 
 Near the end of the log file, the console will print how many tests were executed, and how many of those tests failed:
 
-> INFO: SmackIntegrationTestFramework[muy28] finished: 127/136 [8 failed]
+```
+INFO: SmackIntegrationTestFramework[muy28] finished: 127/136 [8 failed]
+```
 
 When there are test failures, these are then iterated after this line:
 
-> WARNING: 💀 The following 8 tests failed! 💀
+```
+WARNING: 💀 The following 8 tests failed! 💀
+```
 
 This will be followed by an iteration of names of the tests that failed, combined with a stacktrace that contains the
 assertion that failed, such as this one:
