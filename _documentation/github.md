@@ -65,7 +65,7 @@ To add the compliance tests, we add a second job which uses the output of the fi
         uses: ./ci-scripts/launch-server # Launch the eXaMPPle server with test configs
 
       - name: Run XMPP Interoperability Tests against CI server.
-        uses: XMPP-Interop-Testing/xmpp-interop-tests-action@v1.0
+        uses: XMPP-Interop-Testing/xmpp-interop-tests-action@v1.2
         with:
           domain: 'shakespeare.lit'
           adminAccountUsername: 'juliet'
