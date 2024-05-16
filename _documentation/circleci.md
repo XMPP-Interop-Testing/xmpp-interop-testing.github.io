@@ -75,7 +75,7 @@ A second job that may already exist uses the build output, and launches a server
 
 {% endhighlight %}
 
-The workflow is adjusted to run the additiona `test` step after the `build` step completes:
+The workflow is adjusted to run the additional `test` step after the `build` step completes:
 
 {% highlight yaml %}
 
@@ -107,7 +107,7 @@ With the Orb defined, a step that uses it can be added to your pre-existing job:
 
 {% highlight yaml %}
 
-        - xmpp-interop-tests/test:
+      - xmpp-interop-tests/test:
           domain: shakespeare.lit
           timeout: 60000
           adminAccountUsername: juliet
@@ -149,10 +149,10 @@ usage:
         - run:
             command: ./my-server/execute-my-tests.sh
         - xmpp-interop-tests/test:
-          domain: shakespeare.lit
-          timeout: 60000
-          adminAccountUsername: juliet
-          adminAccountPassword: O_Romeo_Romeo!
+            domain: shakespeare.lit
+            timeout: 60000
+            adminAccountUsername: juliet
+            adminAccountPassword: O_Romeo_Romeo!
 
   workflows:
     build-my-server:
