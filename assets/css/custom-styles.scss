@@ -1,11 +1,18 @@
 ---
 ---
 
-img.centered {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+figure.clicklogo img {
+  padding-bottom: 1em;
 }
+figure.clicklogo figcaption {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bolder;
+}
+figure.clicklogo figcaption a {
+  color: unset;
+}
+
 
 figcaption {
     font-size: 0.8rem;
