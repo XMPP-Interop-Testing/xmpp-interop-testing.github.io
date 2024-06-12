@@ -37,7 +37,7 @@ We've set out to make this easier, documenting [a comprehensive how-to guide](/d
 
 #### Annotations
 
-SINT tests can now be annotated to reference specifications. This allows us to tell what implementation tests what specification. That in turn allows us to tell you not only what test fails, but also to what specification/functionality that test relates. We can even quote the exact section of the specification for which a test is failing now.
+SINT tests can now be annotated to reference specifications. This allows us to tell which implementation is testing which specification. That in turn allows us to tell you not only which test fails, but also to which specification/functionality that test relates. We can even quote the exact section of the specification for which a test is failing now.
 
 #### Debug Logging
 
