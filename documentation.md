@@ -10,16 +10,15 @@ _This page is a work in progress. Please bear with us whilst we get our document
 
 If you'd like to learn how to integrate XMPP standards conformance tests on your site, pick your CI system below:
 
-{:style="text-align:center;"}
-[![GitHub](/assets/img/GitHub-logo.png){: height="150" }{:style="margin: 0 1em" }](/documentation/github)
-[![GitLab](/assets/img/GitLab-logo.png){: height="150" }{:style="margin: 0 1em" }](/documentation/gitlab)
-[![Circle CI](/assets/img/CircleCI-logo.png){: height="150" }{:style="margin: 0 1em" }](/documentation/circleci)
-<br/>
-
-{:style="text-align:center;"}
-[![Bamboo](/assets/img/bamboo-logo.jpg){: height="150" }{:style="margin: 0 1em" }](/documentation/bamboo)
-[![Docker](/assets/img/Docker-logo.png){: height="150" }{:style="margin: 0 1em" }](/documentation/docker)
-<br/>
+<div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.5em;">
+{% include clickable_logo.html url="/documentation/github" img="/assets/img/GitHub-logo.png" description="GitHub" %}
+{% include clickable_logo.html url="/documentation/gitlab" img="/assets/img/GitLab-logo.png" description="GitLab" %}
+{% include clickable_logo.html url="/documentation/circleci" img="/assets/img/CircleCI-logo.png" description="Circle CI" %}
+{% include clickable_logo.html url="/documentation/bamboo" img="/assets/img/Bamboo-logo.png" description="Bamboo" %}
+{% include clickable_logo.html url="/documentation/docker" img="/assets/img/Docker-logo.png" description="Docker" %}
+{% include clickable_logo.html url="/documentation/podman" img="/assets/img/Podman-logo.png" description="OCI, Podman, ContainerIO" %}
+{% include clickable_logo.html url="/documentation/forgejo" img="/assets/img/Forgejo-logo.png" description="Forgejo, Codeberg" %}
+</div>
 
 ## Usage
 
