@@ -8,7 +8,7 @@ author: Dan Caseley
 
 ## Introduction
 
-This guide is intended for XMPP Server developers who building on Github Actions. It demonstrates how to add XMPP Interoperability and Standards Conformance tests integrated into a build & test pipeline. This assumes that you already have a pipeline established, and wish to add the additional checks.
+This guide is intended for XMPP Server developers who are building on Github Actions. It demonstrates how to add XMPP Interoperability and Standards Conformance tests integrated into a build & test pipeline. This assumes that you already have a pipeline established, and wish to add the additional checks.
 
 The checks run as their own action within the pipeline, in which they'll execute tests and output junit-esque and debugging output. The only prerequisite is that you've got a built server and have started it.
 
@@ -51,7 +51,6 @@ jobs:
           path: target/example.jar
 
 {% endhighlight %}
-
 
 Here, you check out the code, set up some tooling, then run a process that builds, unit tests and produces a binary output, which we then archive as an artifact.
 
