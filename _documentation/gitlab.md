@@ -10,7 +10,7 @@ author: Dan Caseley
 
 This guide is intended for XMPP Server developers who are building in GitLab. It demonstrates how to add XMPP Interoperability and Standards Conformance tests integrated into a build & test pipeline. This assumes that you already have a pipeline established, and wish to add the additional checks.
 
-Like most external jobs in GitLab, this one consists of both an included component and an explicit to call it as a job. When called, it runs the tests, giving junit-esque outputs and debug logs. The only prerequisite is that you've got a built server, and have started it.
+Like all external components in GitLab, this one requires an include statement (with optional inputs). Since this job often requires your own dependencies and customisation, it imports as a template called `.xmpp-interop-tests` which is then explicit extended in a job. That job runs the tests, giving junit-esque outputs and debug logs. The only prerequisite is that you've got a built server, and have started it.
 
 Assuming you already have a pipeline, and a script to launch your server, adding our GitLab component is as easy as adding a small amount YAML to your pipeline:
 
