@@ -68,11 +68,13 @@ The tests are executed using dedicated accounts. These accounts are created by t
 - by using an administrative account (per [XEP-0133](https://xmpp.org/extensions/xep-0133.html))
 - using in-band registration (per [XEP-0077](https://xmpp.org/extensions/xep-0077.html))
 
-If the former method is desired, then you should provide the credentials of an administative user in the task configuration. When these credentials are not provided, then the latter method will be used to provision test accounts.
+If the former method is desired, then you should provide the credentials of an administrative user in the task configuration. When these credentials are not provided, then the latter method will be used to provision test accounts.
 
 Finally, you can provide a comma-separated list of tests that are to be skipped (For example: `EntityCapsTest,SoftwareInfoIntegrationTest`), or specifications (not case-sensitive) that are to be skipped (For example: `XEP-0045,XEP-0060`).
 
 {% include image.html url="/assets/img/bamboo-config-edit-xmppinteroptesting-task.png" description="Figure 5. Configuring The XMPP Interop Testing task" %}
+
+{% include doc-next-steps.html %}
 
 _Splash image courtesy of [Atlassian](https://wac-cdn.atlassian.com/dam/jcr:31f25b51-d53c-4fda-ad9c-7c150d9cfefa/illustrations-spot-hero-Software%20Development_1.svg?cdnVersion=1807)_
 

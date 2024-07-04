@@ -7,7 +7,7 @@ author: Dan Caseley
 categories: 
 ---
 
-One of XMPP's largest challenges (and indeed of all open standards) is interoperability. We want to anyone to use the standards on any platform they like, written in the programming language they prefer, focussing design and utility toward any group, from enterprise to egg-cup enthusiasts.
+One of XMPP's largest challenges (and indeed of all open standards) is interoperability. We want to enable anyone to use the standards on any platform they like, written in the programming language they prefer, focussing design and utility toward any group, from enterprise to egg-cup enthusiasts.
 
 When we came up with our idea for XMPP interop tests for server implementations, we knew we weren't the first folk to ever have the idea. What was important for us wasn't about getting the tests right, but about getting the tests _used_. With so many programming languages in play, we can't get almost everyone to adopt an additional language into their toolchain. That's a clear no-go.
 

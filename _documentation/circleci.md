@@ -181,6 +181,6 @@ Various options are available when calling _xmpp_interop_tests_action_, and whil
 
 For the latest updates to the documentation of the configuration updates, consult the [GitHub repository](https://github.com/XMPP-Interop-Testing/xmpp-interop-tests-circleci-orb).
 
-Note that we have a dedicated bit of documentation that describes [choosing what tests to run](selecting-tests).
+{% include doc-next-steps.html %}
 
 _Splash image courtesy of [Circle CI Blogs](https://circleci.com/blog/what-is-a-ci-cd-pipeline/)_

@@ -104,6 +104,6 @@ Various options are available when calling _xmpp_interop_tests_action_, and whil
 
 For the latest updates to the documentation of the configuration updates, consult the [GitLab repository](https://gitlab.com/xmpp-interop-testing/xmpp-interop-testing-gitlab-component).
 
-Note that we have a dedicated bit of documentation that describes [choosing what tests to run](selecting-tests).
+{% include doc-next-steps.html %}
 
 _Splash image courtesy of [Joel Filipe, Unsplash](https://unsplash.com/photos/low-angle-photo-of-30-st-mary-axe-VuwAfoHpxgs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
