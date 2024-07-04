@@ -174,6 +174,6 @@ Various options are available when calling _xmpp_interop_tests_action_, and whil
 
 For the latest updates to the documentation of the configuration updates, consult the [GitHub repository](https://github.com/XMPP-Interop-Testing/xmpp-interop-tests-action).
 
-Note that we have a dedicated bit of documentation that describes [choosing what tests to run](selecting-tests).
+{% include doc-next-steps.html %}
 
 _Splash image courtesy of [Roman Synkevych, Unsplash](https://unsplash.com/photos/black-and-white-penguin-toy-wX2L8L-fGeA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_

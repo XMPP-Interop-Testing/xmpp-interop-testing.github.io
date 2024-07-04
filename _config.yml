@@ -56,7 +56,7 @@ plugins:
 
 navbar-links:
   Sponsors: sponsors
-  Documentation: documentation
+  Blog: blog
 
 avatar: "/assets/img/nlnet.hex.svg"
 round-avatar: false
