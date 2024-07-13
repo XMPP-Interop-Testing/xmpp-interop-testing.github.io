@@ -32,7 +32,7 @@ INFO: IoTDataIntegrationTest.dataTest (Normal) Success
 May 15, 2024 5:46:25 PM org.igniterealtime.smack.inttest.SmackIntegrationTestFramework runConcreteTest
 INFO: MultiUserChatIntegrationTest.mucTest (Normal) Start
 May 15, 2024 5:46:25 PM org.igniterealtime.smack.inttest.SmackIntegrationTestFramework runConcreteTest
-INFO: MultiUserChatIntegrationTest.mucTest (Normal) Success```
+INFO: MultiUserChatIntegrationTest.mucTest (Normal) Success
 ```
 
 In this snippet, two test names are mentioned:
