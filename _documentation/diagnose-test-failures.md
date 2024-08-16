@@ -48,55 +48,47 @@ SEVERE: DiscoIntegrationTest.testInfoNoSub (Normal) Failed
 Near the end of the log file, the console will print how many tests were executed, and how many of those tests failed:
 
 ```
-INFO: SmackIntegrationTestFramework[muy28] finished: 127/136 [8 failed]
+Test run (id: m7te1) finished! 227 tests were successful (✔), 11 failed (💀), and 29 were impossible to run (✖).
 ```
 
-When there are test failures, these are then iterated after this line:
+This is followed by some summaries. First, a table of results aggregated by specification is shown, and next, there will
+be a list of tests that were impossible to run. 
+
+When there are test failures, these are then iterated next, after this line:
 
 ```
-WARNING: 💀 The following 8 tests failed! 💀
+💀 The following 11 tests failed! 💀
 ```
 
-This will be followed by an iteration of names of the tests that failed, combined with a stacktrace that contains the
-assertion that failed, such as this one:
+This will be followed by a list of tests that failed. For each test failure, a block like this will be printed:
 
 ```
-May 15, 2024 5:46:45 PM org.igniterealtime.smack.inttest.SmackIntegrationTestFramework$JulTestRunResultProcessor process
-SEVERE: DiscoIntegrationTest.testInfoNoSub (Normal) failed: org.opentest4j.AssertionFailedError: Expected the disco#info request from 'smack-inttest-one-muy28@example.org/one-muy28' to 'smack-inttest-two-muy28@example.org' (which has not granted presence subscription to the requestor) to be responded to with an error (but it was not).
-org.opentest4j.AssertionFailedError: Expected the disco#info request from 'smack-inttest-one-muy28@example.org/one-muy28' to 'smack-inttest-two-muy28@example.org' (which has not granted presence subscription to the requestor) to be responded to with an error (but it was not).
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
-	at org.junit.jupiter.api.Assertions.fail(Assertions.java:109)
-	at org.igniterealtime.smack.inttest.xep0030.DiscoIntegrationTest.testInfoNoSub(DiscoIntegrationTest.java:371)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.igniterealtime.smack.inttest.SmackIntegrationTestFramework.lambda$runTests$0(SmackIntegrationTestFramework.java:476)
-	at org.igniterealtime.smack.inttest.SmackIntegrationTestFramework.runConcreteTest(SmackIntegrationTestFramework.java:551)
-	at org.igniterealtime.smack.inttest.SmackIntegrationTestFramework$PreparedTest.run(SmackIntegrationTestFramework.java:759)
-	at org.igniterealtime.smack.inttest.SmackIntegrationTestFramework.runTests(SmackIntegrationTestFramework.java:539)
-	at org.igniterealtime.smack.inttest.SmackIntegrationTestFramework.run(SmackIntegrationTestFramework.java:277)
-	at org.igniterealtime.smack.inttest.SmackIntegrationTestFramework.main(SmackIntegrationTestFramework.java:115)
+• XEP-0045: Multi-User Chat, Section 10.8
+      "[T]he owner first requests the admin list by querying the room for all users with an affiliation of 'admin'. [...] If the <user@host> of the 'from' address does not match the bare JID of a room owner, the service MUST return a <forbidden/> error to the sender."
+  Failure reason  : Unexpected error condition in the (expected) error that was returned to 'smack-inttest-two-m7te1@example.org/two-m7te1' (that is not in the room) after it requested the admin list of room 'smack-inttest-owner-user-requests-adminlist-m7te1-jugevn@conference.example.org'. ==> expected: <forbidden> but was: <bad-request>
+  Stanza log file : logs/MultiUserChatOwnerAdminListIntegrationTest.testUserRequestsAdminList (Normal).log
+  Test class      : class org.jivesoftware.smackx.muc.MultiUserChatOwnerAdminListIntegrationTest
+  Test method     : testUserRequestsAdminList
 ```
 
-From the first two lines of the above, two key bits of information can be deduced:
+Each line from this block contains valuable information to help understand the test failure.
 
-1. The name of the test that failed: `DiscoIntegrationTest.testInfoNoSub (Normal)`
-2. The assertion that failed is: 
-   > Expected the disco#info request from 'smack-inttest-one-muy28@example.org/one-muy28' to 'smack-inttest-two-muy28@example.org' (which has not granted presence subscription to the requestor) to be responded to with an error (but it was not).
+The first two lines reference the specification that defines the expected behavior:
+1. On the first line, the name and (if available) the section of the specification that was being tested is shown: 
+   > XEP-0045: Multi-User Chat, Section 10.8
+2. This is followed by a quote of the specification that in more detail describes the functionality that is subject of the (failed) test:
+   > [T]he owner first requests the admin list by querying the room for all users with an affiliation of 'admin'. [...] If the &lt;user@host> of the 'from' address does not match the bare JID of a room owner, the service MUST return a &lt;forbidden/> error to the sender.
 
-Finally, at the end of log, there a summary is provided of the specifications that correlate to the failed tests:
+This is followed by the _observed_ behavior:
+3. The third line, starting with "Failure reason", describes the assertion that failed:
+   > Failure reason  : Unexpected error condition in the (expected) error that was returned to 'smack-inttest-two-m7te1@example.org/two-m7te1' (that is not in the room) after it requested the admin list of room 'smack-inttest-owner-user-requests-adminlist-m7te1-jugevn@conference.example.org'. ==> expected: &lt;forbidden> but was: &lt;bad-request>
 
-```
-SEVERE: The failed tests correspond to the following specifications:
-- XEP-0030 (version 2.5.0) section 8:	"The following rule[s] apply to the handling of service discovery requests sent to bare JIDs: In response to a disco#info request, the server MUST return a <service-unavailable/> error if [...] [t]he requesting entity is not authorized to receive presence from the target entity." (as tested by 'DiscoIntegrationTest.testInfoNoSub (Normal)')
-```
-
-Each line contains these bits of information:
-- A reference to the specification (and section) identifier: `XEP-0030 (version 2.5.0) section 8`
-- A quote of the specification that in more detail describes the functionality that is subject of the (failed) test:
-  > The following rule[s] apply to the handling of service discovery requests sent to bare JIDs: In response to a disco#info request, the server MUST return a <service-unavailable/> error if [...] [t]he requesting entity is not authorized to receive presence from the target entity.
-- The name of the test that failed: `(as tested by 'DiscoIntegrationTest.testInfoNoSub (Normal)')`
+Finally, there is a short list of debugging information:
+4. Each test will generate a log file that contains the raw XMPP data (more on that below). The fourth line names the file that contains the XMPP data for the test that failed:
+   > Stanza log file : logs/MultiUserChatOwnerAdminListIntegrationTest.testUserRequestsAdminList (Normal).log
+5. The last two lines will contain the name of the class and method of the implementation of the test. This should be useful only when debugging the test implementation itself (and can otherwise probably be ignored):
+   > Test class      : class org.jivesoftware.smackx.muc.MultiUserChatOwnerAdminListIntegrationTest
+   > Test method     : testUserRequestsAdminList
 
 ### Referencing the XMPP traffic
 
@@ -107,25 +99,32 @@ Each test will log its traffic in a distinct file. The name of the file matches 
 `.log` suffix. These files are stored in a directory that, unless otherwise configured, is named `logs` and can be found
 in the working directory of the test execution.
 
-For the failed test that is used in the example above, the XMPP data will be stored in a file named 
-`DiscoIntegrationTest.testInfoNoSub (Normal).log`
+For the failed test that is used in the example above, the XMPP data is reported to be stored in a file named 
+`logs/MultiUserChatOwnerAdminListIntegrationTest.testUserRequestsAdminList (Normal).log`
 
 The log files are typically quite full of data, as most tests generate quite a bit of XMPP traffic. The composition of
 each file is the same. Each file contains of fragments like these two taken from the log file that we were using as an
 example:
 
 ```xml
-17:46:27.591 SENT (1): 
-<iq to='smack-inttest-two-muy28@example.org' id='41R2Q-110' type='get'>
-  <query xmlns='http://jabber.org/protocol/disco#info'>
-  </query>
+09:15:52.49 SENT (2):
+<iq to='smack-inttest-owner-user-requests-adminlist-m7te1-jugevn@conference.example.org' id='HT6Q6-1264' type='get'>
+    <query xmlns='http://jabber.org/protocol/muc#admin'>
+        <item affiliation='admin'>
+        </item>
+    </query>
 </iq>
-17:46:27.637 RECV (1): 
-<iq type="result" id="41R2Q-110" from="smack-inttest-two-muy28@example.org" to="smack-inttest-one-muy28@example.org/one-muy28">
-  <query xmlns="http://jabber.org/protocol/disco#info">
-    <identity category="account" type="registered"/>
-    <feature var="http://jabber.org/protocol/disco#info"/>
-  </query>
+09:15:52.49 RECV (2):
+<iq type="error" id="HT6Q6-1264" from="smack-inttest-owner-user-requests-adminlist-m7te1-jugevn@conference.example.org" to="smack-inttest-two-m7te1@example.org/two-m7te1">
+<query xmlns="http://jabber.org/protocol/muc#admin">
+    <item affiliation="admin"/>
+</query>
+<error code="400" type="modify">
+    <bad-request xmlns="urn:ietf:params:xml:ns:xmpp-stanzas"/>
+    <text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">
+        You are not an occupant of this room.
+    </text>
+</error>
 </iq>
 ```
 
@@ -143,39 +142,47 @@ wire.
 ### Identifying the problem
 
 Based on all the information above, we can conclude that the server that is being tested does not comply with
-[XEP-0030 'Service Discovery', section 8 'Security Considerations'](https://xmpp.org/extensions/xep-0030.html#security).
+[XEP-0045: 'Multi-User Chat', Section 10.8 'Modifying the Admin List'](https://xmpp.org/extensions/xep-0045.html#modifyadmin).
 Specifically, this part of that section was the subject of the test:
 
-> The following rule[s] apply to the handling of service discovery requests sent to bare JIDs: In response to a 
-> disco#info request, the server MUST return a <service-unavailable/> error if [...] [t]he requesting entity is not
-> authorized to receive presence from the target entity.
+> [T]he owner first requests the admin list by querying the room for all users with an affiliation of 'admin'. [...] If the &lt;user@host> of the 'from' address does not match the bare JID of a room owner, the service MUST return a &lt;forbidden/> error to the sender.
 
 The failed assertion was recorded as:
 
-> Expected the disco#info request from 'smack-inttest-one-muy28@example.org/one-muy28' to 
-> 'smack-inttest-two-muy28@example.org' (which has not granted presence subscription to the requestor) to be responded 
-> to with an error (but it was not).
+> Unexpected error condition in the (expected) error that was returned to 'smack-inttest-two-m7te1@example.org/two-m7te1' (that is not in the room) after it requested the admin list of room 'smack-inttest-owner-user-requests-adminlist-m7te1-jugevn@conference.example.org'. ==> expected: &lt;forbidden> but was: &lt;bad-request>
 
 We can now cross-reference that with the XMPP data that was exchanged with the server:
 
 ```xml
-17:46:27.591 SENT (1): 
-<iq to='smack-inttest-two-muy28@example.org' id='41R2Q-110' type='get'>
-  <query xmlns='http://jabber.org/protocol/disco#info'>
-  </query>
+09:15:52.49 SENT (2):
+<iq to='smack-inttest-owner-user-requests-adminlist-m7te1-jugevn@conference.example.org' id='HT6Q6-1264' type='get'>
+    <query xmlns='http://jabber.org/protocol/muc#admin'>
+        <item affiliation='admin'>
+        </item>
+    </query>
 </iq>
-17:46:27.637 RECV (1): 
-<iq type="result" id="41R2Q-110" from="smack-inttest-two-muy28@example.org" to="smack-inttest-one-muy28@example.org/one-muy28">
-  <query xmlns="http://jabber.org/protocol/disco#info">
-    <identity category="account" type="registered"/>
-    <feature var="http://jabber.org/protocol/disco#info"/>
-  </query>
+09:15:52.49 RECV (2):
+<iq type="error" id="HT6Q6-1264" from="smack-inttest-owner-user-requests-adminlist-m7te1-jugevn@conference.example.org" to="smack-inttest-two-m7te1@example.org/two-m7te1">
+<query xmlns="http://jabber.org/protocol/muc#admin">
+    <item affiliation="admin"/>
+</query>
+<error code="400" type="modify">
+    <bad-request xmlns="urn:ietf:params:xml:ns:xmpp-stanzas"/>
+    <text xmlns="urn:ietf:params:xml:ns:xmpp-stanzas">
+        You are not an occupant of this room.
+    </text>
+</error>
 </iq>
 ```
 
-Sure enough, we can see that connection 1 _sent_ a `disco#info` request, and received a response. The response that was
-received was _not_ the expected `<service-unavailable/>` error, indicating that indeed, there is a problem with
-compliance to the XMPP standard!
+Sure enough, we can see that connection 2 _sent_ a request for the admin list, and received a response. (The data in the
+log file leading up to this fragment will show that the user on connection 2 never joined the room. That data has been
+omitted here for brevity.)
+
+The response that was received by connection 2 is an error (its text even suggests that the service properly detected
+that the user that made the request was not an occupant of the room). The error condition is `<bad-request/>`, instead
+of the expected `<forbidden/>`. This shows that indeed, there is a problem with compliance to the XMPP
+standard!
 
 ## Look at the implementation of the test
 
@@ -205,6 +212,6 @@ The test implementation are sourced from two different repositories:
 Last, but not least: implementing tests is _hard_. Harder than many people imagine. There is a distinct possibility that
 a test fails not because of a problem in your server, but in the implementation of our test. If a test fails, and you
 have reason to believe that this is caused by a bug in the test implementation rather than the server that you're 
-testing, please reach out to us!
+testing, [please reach out to us](/contact)!
 
 _Splash image courtesy of [Andres Siimon, Unsplash](https://unsplash.com/photos/man-in-red-and-white-checkered-dress-shirt-wearing-black-fedora-hat-Oe3JidQ9UvU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
