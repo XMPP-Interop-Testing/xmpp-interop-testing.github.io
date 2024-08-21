@@ -20,3 +20,7 @@ figcaption {
     margin-left: 2rem;
     margin-top: 0.5rem;
 }
+
+.highlight > pre:not([class~="highlight"]) {
+  padding: 0.5rem;
+}
