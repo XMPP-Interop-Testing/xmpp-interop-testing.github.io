@@ -10,6 +10,12 @@ When we came up with our idea for XMPP interop tests for server implementations,
 
 Instead, we’re choosing to wrap our tests in the packaging of the common CI systems (a GitHub Action, a Circle CI Orb, etc) so that whatever your regular toolchain, you can slot the tests into the test phase of your build pipeline.
 
+## Who's this for?
+
+The intended target audience of this project consists of XMPP server software _developers_. The tests that are provided by this project aim to identify problems in the _implementation_ of XMPP server software.  We provide tooling that is explicitly designed to be used in the continuous integrations systems that are typically used in server software development.
+
+Our project is _not_ designed verify the _configuration_ of an XMPP server. Although there is overlap, these are two different beasts. For people that _administer_ an XMPP server, this project is probably less suitable. They likely benefit more from tooling like [the XMPP Compliance Tester](https://compliance.conversations.im/).
+
 ## Installation & Configuration
 
 If you'd like to learn how to integrate XMPP standards conformance tests in your build pipeline, pick your continuous integration system below:
@@ -25,6 +31,8 @@ If you'd like to learn how to integrate XMPP standards conformance tests in your
 </div>
 
 ## Usage
+
+After integrating our tests in your build pipeline, you might be interested in the following usage documentation.
 
 - [Choosing what test to run](/documentation/selecting-tests)
 - [Diagnose test failures](/documentation/diagnose-test-failures)
