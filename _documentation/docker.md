@@ -18,7 +18,7 @@ Docker container images for the XMPP Interop Testing project are published to [t
 docker pull ghcr.io/xmpp-interop-testing/xmpp_interop_tests:main
 
 docker run \
-    --net=host \
+    --network=host \
     ghcr.io/xmpp-interop-testing/xmpp_interop_tests:main \
     --domain=shakespeare.lit \
     --adminAccountUsername=juliet \
@@ -49,7 +49,7 @@ For example, by adding `-v "$(pwd)"/xmpplogs:/logs`, a directory named `xmpplogs
 
 {% highlight bash %}
 $ docker run \
-    --net=host \
+    --network=host \
     -v "$(pwd)"/xmpplogs:/logs \
     ghcr.io/xmpp-interop-testing/xmpp_interop_tests:main \
     --domain=shakespeare.lit \
@@ -68,7 +68,7 @@ Verbose test results are logged on standard-out. To programmatically detect test
 
 {% highlight bash %}
 $ docker run \
-    --net=host \
+    --network=host \
     -v "$(pwd)"/xmpplogs:/logs \
     ghcr.io/xmpp-interop-testing/xmpp_interop_tests:main \
     --domain=shakespeare.lit \
