@@ -8,18 +8,18 @@ author: Guus der Kinderen
 
 This guide is intended for XMPP Server developers who are building their server using a continuous integration solution that is capable of launching Docker instances.
 
-The Docker-based approach has been created for those development environment that doesn't match [any of our other, more specific CI-integrations](/index#installation--configuration), but it none-the-less offers the full range of features.
+The Docker-based approach has been created for those development environments that don't match [any of our other, more specific CI-integrations](/index#installation--configuration), but it none-the-less offers the full range of features.
 
 This guide demonstrates how to add XMPP Interoperability and Standards Conformance tests integrated into a build & test pipeline. It is assumed that you already have a pipeline established, and wish to add the additional checks provided by our project.
 
 Docker container images for the XMPP Interop Testing project are published to [the GitHub Package / Container registry of our project](https://github.com/orgs/XMPP-Interop-Testing/packages). Using them can be as simple as this:
 
 {% highlight bash %}
-docker pull ghcr.io/xmpp-interop-testing/xmpp_interop_tests:main
+docker pull ghcr.io/xmpp-interop-testing/xmpp_interop_tests:latest
 
 docker run \
     --network=host \
-    ghcr.io/xmpp-interop-testing/xmpp_interop_tests:main \
+    ghcr.io/xmpp-interop-testing/xmpp_interop_tests:latest \
     --domain=shakespeare.lit \
     --adminAccountUsername=juliet \
     --adminAccountPassword=O_Romeo_Romeo
@@ -81,7 +81,7 @@ $ echo $?
 2
 {% endhighlight %}
 
-For the latest updates to the documentation of the configuration updates, consult the [GitHub repository](https://github.com/XMPP-Interop-Testing/xmpp-interop-tests-action#from-a-container).
+For the latest updates to the documentation of the configuration updates, consult the [GitHub repository](https://github.com/XMPP-Interop-Testing/smack-sint-server-extensions?#from-a-container).
 
 {% include doc-next-steps.html %}
 
