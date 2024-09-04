@@ -2,7 +2,7 @@
 layout: page
 title:  "Testing in Drone"
 cover-img: /assets/img/wip_splash.jpg
-date:   2024-09-28 09:28:55 +0200
+date:   2024-09-04 09:28:55 +0200
 author: Guus der Kinderen
 ---
 
