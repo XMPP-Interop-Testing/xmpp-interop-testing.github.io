@@ -1,8 +1,8 @@
 ---
 layout: page
-title:  "Testing in Forgejo"
+title:  "Testing in Jenkins"
 cover-img: /assets/img/wip_splash.jpg
-date:   2024-06-12 13:47:14 +0200
+date:   2024-09-28 09:29:31 +0200
 author: Guus der Kinderen
 ---
 

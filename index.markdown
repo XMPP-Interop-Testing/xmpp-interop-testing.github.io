@@ -20,14 +20,17 @@ Our project is _not_ designed verify the _configuration_ of an XMPP server. Alth
 
 If you'd like to learn how to integrate XMPP standards conformance tests in your build pipeline, pick your continuous integration system below:
 
-<div style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.5em;">
+<div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5em;">
 {% include clickable_logo.html url="/documentation/github" img="/assets/img/GitHub-logo.png" description="GitHub" %}
 {% include clickable_logo.html url="/documentation/gitlab" img="/assets/img/GitLab-logo.png" description="GitLab" %}
 {% include clickable_logo.html url="/documentation/circleci" img="/assets/img/CircleCI-logo.png" description="Circle CI" %}
 {% include clickable_logo.html url="/documentation/bamboo" img="/assets/img/Bamboo-logo.png" description="Bamboo" %}
 {% include clickable_logo.html url="/documentation/docker" img="/assets/img/Docker-logo.png" description="Docker" %}
 {% include clickable_logo.html url="/documentation/podman" img="/assets/img/Podman-logo.png" description="OCI, Podman, ContainerIO" %}
+{% include clickable_logo.html url="/documentation/woodpecker" img="/assets/img/Woodpecker-logo.png" description="Woodpecker" %}
+{% include clickable_logo.html url="/documentation/drone" img="/assets/img/Drone-logo.png" description="Drone" %}
 {% include clickable_logo.html url="/documentation/forgejo" img="/assets/img/Forgejo-logo.png" description="Forgejo, Codeberg" %}
+{% include clickable_logo.html url="/documentation/jenkins" img="/assets/img/Jenkins-logo.png" description="Jenkins" %}
 </div>
 
 ## Usage
