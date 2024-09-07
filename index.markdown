@@ -39,3 +39,44 @@ After integrating our tests in your build pipeline, you might be interested in t
 
 - [Choosing what test to run](/documentation/selecting-tests)
 - [Diagnose test failures](/documentation/diagnose-test-failures)
+
+## What is being tested?
+
+The tests mimic clients that interact with the server under test. All tests are client-to-server based tests. Server-to-server tests aren't currently included, but those might be added in the future.
+
+The tests verify behavior as specified by the many RFCs and XEPs that govern the XMPP protocol. At the time of writing, tests exist for these specifications:
+
+- [RFC 6120: Extensible Messaging and Presence Protocol (XMPP): Core](https://datatracker.ietf.org/doc/html/rfc6120)
+- [RFC 6121: Extensible Messaging and Presence Protocol (XMPP): Instant Messaging and Presence](https://datatracker.ietf.org/doc/html/rfc6121)
+- [XEP-0030: Service Discovery](https://xmpp.org/extensions/xep-0030.html)
+- [XEP-0045: Multi-User Chat](https://xmpp.org/extensions/xep-0045.html)
+- [XEP-0048: Bookmarks](https://xmpp.org/extensions/xep-0048.html)
+- [XEP-0050: Ad-Hoc Commands](https://xmpp.org/extensions/xep-0050.html)
+- [XEP-0054: vcard-temp](https://xmpp.org/extensions/xep-0054.html)
+- [XEP-0060: Publish-Subscribe](https://xmpp.org/extensions/xep-0060.html)
+- [XEP-0080: User Location](https://xmpp.org/extensions/xep-0080.html)
+- [XEP-0085: Chat State Notifications](https://xmpp.org/extensions/xep-0085.html)
+- [XEP-0092: Software Version](https://xmpp.org/extensions/xep-0092.html)
+- [XEP-0096: SI File Transfer](https://xmpp.org/extensions/xep-0096.html)
+- [XEP-0107: User Mood](https://xmpp.org/extensions/xep-0107.html)
+- [XEP-0115: Entity Capabilities](https://xmpp.org/extensions/xep-0115.html)
+- [XEP-0118: User Tune](https://xmpp.org/extensions/xep-0118.html)
+- [XEP-0198: Stream Management](https://xmpp.org/extensions/xep-0198.html)
+- [XEP-0199: XMPP Ping](https://xmpp.org/extensions/xep-0199.html)
+- [XEP-0215: External Service Discovery](https://xmpp.org/extensions/xep-0215.html)
+- [XEP-0232: Software Information](https://xmpp.org/extensions/xep-0232.html)
+- [XEP-0313: Message Archive Management](https://xmpp.org/extensions/xep-0313.html)
+- [XEP-0347: Internet of Things - Discovery](https://xmpp.org/extensions/xep-0347.html)
+- [XEP-0352: Client State Indication](https://xmpp.org/extensions/xep-0352.html)
+- [XEP-0363: HTTP File Upload](https://xmpp.org/extensions/xep-0363.html)
+- [XEP-0374: OpenPGP for XMPP Instant Messaging](https://xmpp.org/extensions/xep-0374.html)
+- [XEP-0384: OMEMO Encryption](https://xmpp.org/extensions/xep-0384.html)
+- [XEP-0486: MUC Avatars](https://xmpp.org/extensions/xep-0486.html)
+
+The set of tested specifications changes frequently (and we might not be the best at keeping the list on this page completely up-to-date).
+
+Our tests do not necessarily cover the listed specifications completely, for a couple of reasons:
+- We've simply not been able to finish all tests. The amount of XMPP-related specifications numbers in the hundreds. On top of that: some specifications are lengthy, _lengthy_ documents, for which more effort is needed to complete test coverage. Feel free to lend us a hand, either by implementing tests yourself, or making available resources for us to do so! If you're considering this, [please reach out to us](/contact).
+- Secondly, we have opted to cover only the bits of the specification that are defined to be mandatory ('REQUIRED', 'MUST' and 'SHALL' in [RFC 2119-speak](https://datatracker.ietf.org/doc/html/rfc2119)). Other requirement indicators ('SHOULD', 'MAY') signal wiggle-room: for those parts of a specification, a server _could_ possibly act differently than what is specified, which _can_ be acceptable in certain contexts. We prefer to have test failures to unequivocally indicate a failure (which is hard enough in itself)! We might add tests for other requirement indicators in the future (guarded by some kind of configuration option), but for now, there are plenty of tests that we can create that do not suffer from this ambiguity. We've opted to start with those.
+
+The order in which we're creating tests is loosely based on the [XMPP Compliance Suites](https://xmpp.org/about/compliance-suites/), that provide guidance on which specifications are important when implementing an application of a certain kind. We've also added tests that happen to be already available, or that were created in an effort to tackle some kind of development issue that one of us was working on in the past.
