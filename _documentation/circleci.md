@@ -99,7 +99,7 @@ To run our Interoperability Tests, only one step needs to be added to this. This
 {% highlight yaml %}
 
   orbs:
-    xmpp-interop-tests: xmpp-interop-tests/tests@1.0.0
+    xmpp-interop-tests: xmpp-interop-tests/tests@1.4.0
 
 {% endhighlight %}
 
@@ -128,7 +128,7 @@ usage:
   version: 2.1
 
   orbs:
-    xmpp-interop-tests: xmpp-interop-tests/tests@1.0.0
+    xmpp-interop-tests: xmpp-interop-tests/tests@1.4.0
 
   jobs:
     build:
