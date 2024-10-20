@@ -6,8 +6,8 @@ date:   2024-05-15 21:43:29 +0200
 author: Guus der Kinderen
 ---
 
-This page shows how you can exclude tests from the execution of your runner. When you exclude tests, all tests except
-for the excluded tests are executed.
+This page shows how you can include or exclude tests from the execution of your runner. When you exclude tests, all tests except
+for the excluded tests are executed. Similarly, when you include tests, only those tests are executed.
 
 **Note**: It is currently not possible to select _individual_ tests. Test can only be selected in context of a larger set.
 More on that below.
@@ -15,6 +15,7 @@ More on that below.
 ## Selecting tests By Specification
 
 A set of tests can be identified by specification. Typically, an RFC or XEP reference is used, such as these examples:
+
 - `RFC6121`
 - `XEP-0060`
 
@@ -24,7 +25,7 @@ An alternative approach is to select a set by the name of their implementation. 
 in the output logs of a test execution, which will list the names of the tests that are being executed. See, for
 example, this snippet of an output log:
 
-```
+```plain
 May 15, 2024 5:46:24 PM org.igniterealtime.smack.inttest.SmackIntegrationTestFramework runConcreteTest
 INFO: IoTDataIntegrationTest.dataTest (Normal) Start
 May 15, 2024 5:46:25 PM org.igniterealtime.smack.inttest.SmackIntegrationTestFramework runConcreteTest
