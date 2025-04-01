@@ -40,15 +40,21 @@ In this snippet, two test names are mentioned:
 - `IoTDataIntegrationTest` 
 - `MultiUserChatIntegrationTest`
 
-## Excluding tests
+## Configuring tests
 
-Every test runner has two configuration options that can be used to exclude tests. Both of these are optional. You can
+Every test runner has four configuration options that can be used to include or exclude tests. All of these are optional. You can
 use them with one or more values, if so desired (unless otherwise stated in the runner-specific documentation, you can
 use comma-separated values to provide more than one value for an option).
 
 - `disabledTests` - used to configure names of tests that are to be skipped. For example: `IoTDataIntegrationTest,MultiUserChatIntegrationTest`
 - `disabledSpecifications` - A set of specifications (not case-sensitive) that are to be skipped. For example: `XEP-0045,XEP-0060`
+- `enabledTests` - used to configure names of tests that are to be included.
+- `enabledSpecifications` - A set of specifications (not case-sensitive) that are to be included.
 
-That's all to it!
+If all options are blank, then all tests are executed.
+
+If an option to both enable and disable tests is provided, then both apply - tests will only run that match the enabled list, and are not in the disabled list. (An example of where this might be useful: You want to test the implementation of a specification but know that your implementation doesn't include a feature and so you disable certain tests.)
+
+That's all there is to it!
 
 _Splash image courtesy of [Rima Kruciene, Unsplash](https://unsplash.com/photos/black-and-white-audio-controller-close-up-photo-gpKe3hmIawg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_

@@ -181,6 +181,8 @@ Various options are available when calling _xmpp_interop_tests_action_, and whil
 | enabledSpecifications  | (optional) A comma-separated list of specifications (not case-sensitive) that are the only ones to be run. For example: XEP-0045,XEP-0060                                                                                                                                             | -                   |
 | logDir                 | (optional) The directory in which the test output and logs are to be stored. This directory will be created, if it does not already exist.                                                                                                                                            | ./output            |
 
+For more information on enabling and disabling tests, consult [this guide](/documentation/selecting-tests).
+
 For the latest updates to the documentation of the configuration updates, consult the [GitHub repository](https://github.com/XMPP-Interop-Testing/xmpp-interop-tests-circleci-orb).
 
 {% include doc-next-steps.html %}
