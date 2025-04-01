@@ -43,6 +43,8 @@ Various options are available when invoking the _xmpp_interop_tests_, and whilst
 | enabledTests           | (optional) A comma-separated list of tests that are the only ones to be run. For example: EntityCapsTest,SoftwareInfoIntegrationTest                                                                                                                                                            | -                   |
 | enabledSpecifications  | (optional) A comma-separated list of specifications (not case-sensitive) that are the only ones to be run. For example: XEP-0045,XEP-0060                                                                                                                                                       | -                   |
 
+For more information on enabling and disabling tests, consult [this guide](/documentation/selecting-tests).
+
 ### Exposing XMPP traffic logs
 
 XMPP traffic is logged by the container in its `/logs` directory. To easily access the XMPP traffic logs, use a bind mount from anywhere on the host machine into the container on the `/logs` path.
