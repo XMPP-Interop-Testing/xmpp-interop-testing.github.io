@@ -61,6 +61,7 @@ The tests verify behavior as specified by the many RFCs and XEPs that govern the
 - [XEP-0107: User Mood](https://xmpp.org/extensions/xep-0107.html)
 - [XEP-0115: Entity Capabilities](https://xmpp.org/extensions/xep-0115.html)
 - [XEP-0118: User Tune](https://xmpp.org/extensions/xep-0118.html)
+- [XEP-0133: Service Administration](https://xmpp.org/extensions/xep-0133.html)
 - [XEP-0198: Stream Management](https://xmpp.org/extensions/xep-0198.html)
 - [XEP-0199: XMPP Ping](https://xmpp.org/extensions/xep-0199.html)
 - [XEP-0215: External Service Discovery](https://xmpp.org/extensions/xep-0215.html)
@@ -71,6 +72,9 @@ The tests verify behavior as specified by the many RFCs and XEPs that govern the
 - [XEP-0363: HTTP File Upload](https://xmpp.org/extensions/xep-0363.html)
 - [XEP-0374: OpenPGP for XMPP Instant Messaging](https://xmpp.org/extensions/xep-0374.html)
 - [XEP-0384: OMEMO Encryption](https://xmpp.org/extensions/xep-0384.html)
+- [XEP-0410: MUC Self-Ping (Schrödinger's Chat)](https://xmpp.org/extensions/xep-0410.html)
+- [XEP-0421: Occupant identifiers for semi-anonymous MUCs](https://xmpp.org/extensions/xep-0421.html)
+- [XEP-0433: Extended Channel Search](https://xmpp.org/extensions/xep-0433.html)
 - [XEP-0486: MUC Avatars](https://xmpp.org/extensions/xep-0486.html)
 
 The set of tested specifications changes frequently (and we might not be the best at keeping the list on this page completely up-to-date).
