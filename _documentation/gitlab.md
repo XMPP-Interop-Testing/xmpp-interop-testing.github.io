@@ -17,7 +17,7 @@ Assuming you already have a pipeline, and a script to launch your server, adding
 {% highlight yaml %}
 
   include:
-    - component: gitlab.com/xmpp-interop-testing/xmpp-interop-testing-gitlab-component/interop-testing@v1.5.0
+    - component: gitlab.com/xmpp-interop-testing/xmpp-interop-testing-gitlab-component/interop-testing@v1.6.0
       inputs:
         domain: 'shakespeare.lit'
         adminAccountUsername: 'juliet'
@@ -65,7 +65,7 @@ Then you'd add our first example, with tweaks for dependencies and for launching
         - my_xmpp_server
 
   include:
-    - component: gitlab.com/xmpp-interop-testing/xmpp-interop-testing-gitlab-component/interop-testing@v1.5.0
+    - component: gitlab.com/xmpp-interop-testing/xmpp-interop-testing-gitlab-component/interop-testing@v1.6.0
       inputs:
         domain: 'shakespeare.lit'
         host: '127.0.0.1'
