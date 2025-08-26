@@ -27,6 +27,7 @@ If you'd like to learn how to integrate XMPP standards conformance tests in your
 {% include clickable_logo.html url="/documentation/bamboo" img="/assets/img/Bamboo-logo.png" description="Bamboo" %}
 {% include clickable_logo.html url="/documentation/docker" img="/assets/img/Docker-logo.png" description="Docker" %}
 {% include clickable_logo.html url="/documentation/podman" img="/assets/img/Podman-logo.png" description="OCI, Podman, ContainerIO" %}
+{% include clickable_logo.html url="/documentation/harness" img="/assets/img/Harness-logo.png" description="Harness" %}
 {% include clickable_logo.html url="/documentation/woodpecker" img="/assets/img/Woodpecker-logo.png" description="Woodpecker" %}
 {% include clickable_logo.html url="/documentation/drone" img="/assets/img/Drone-logo.png" description="Drone" %}
 {% include clickable_logo.html url="/documentation/forgejo" img="/assets/img/Forgejo-logo.png" description="Forgejo, Codeberg" %}
