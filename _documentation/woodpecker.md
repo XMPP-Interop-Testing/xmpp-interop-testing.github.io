@@ -1,13 +1,128 @@
 ---
 layout: page
 title:  "Testing in Woodpecker"
-cover-img: /assets/img/wip_splash.jpg
+cover-img: /assets/img/woodpecker_splash.jpg
 date:   2024-09-04 09:28:01 +0200
 author: Guus der Kinderen
 ---
 
-## Coming soon!
+## Introduction
 
-Although we've not yet finished our test runner for Woodpecker, you _may_ be able to get our tests running by using one of our container-based runners. We currently offer solutions for [Docker](/documentation/docker) and [OCI/Podman](/documentation/podman). You can try those to get started!
+This guide is intended for XMPP Server developers who are building their server with Woodpecker. It demonstrates how to add XMPP Interoperability and Standards Conformance tests integrated into a build & test pipeline. This assumes that you already have a pipeline established, and wish to add the additional checks.
 
-_Splash image courtesy of [Pavel Neznanov, Unsplash](https://unsplash.com/photos/silver-and-gold-round-accessory-w95Fb7EEcjE?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)_
+Note that the plugin that you'll use in Woodpecker can be shared between [Drone](/documentation/drone), [Harness](/documentation/harness), [Woodpecker](/documentation/woodpecker), and possibly other continuous integration solutions. This is why you'll see references to 'drone' in this document: that same plugin is re-used for various systems. The instructions provided herein are, however, specific to Woodpecker.
+
+The checks are executed within the pipeline by a plugin that we're providing. The only prerequisite is that you've got a built XMPP server and have started it (presumably as a background service)
+
+Assuming that you have a pre-existing pipeline that build your server and starts it for integration testing, then adding our plugin is as easy as adding one step to your pipeline, like this:
+
+{% highlight yaml %}
+
+- name: runtests
+  image: ghcr.io/xmpp-interop-testing/drone-xmpp-test:latest
+  settings:
+    host: xmppserver
+    domain: shakespeare.lit
+
+{% endhighlight %}
+
+The above assumes that your server is running and reachable on the host `xmppserver`, serving the XMPP domain `shakespeare.lit`. You'll find the full range of available configuration options below.
+
+## A Full Example
+
+Woodpecker relies heavily on containerization. The following example assumes that your pipeline is set up for building an XMPP server and making available the corresponding container image, called `myorg/xmppserver`"
+
+To execute the tests from the XMPP Integration Testing Framework, the server needs to be running. That can be achieved by running your server as a [service](https://woodpecker-ci.org/docs/usage/services), as shown in this example:
+
+{% highlight yaml %}
+
+services:
+  - name: xmppserver
+    image: myorg/xmppserver:latest
+
+{% endhighlight %}
+
+The host on which your XMPP service is running will match the `name` value of the service.
+
+Optionally, include a check for the health of your xmppserver service (or add a 'sleep') to allow your service to fully initialize. Refer to the [Woodpecker documentation](https://woodpecker-ci.org/docs/usage/services#initialization) for guidance.
+
+{% highlight yaml %}
+
+- name: wait
+  image: debian:stable-slim
+  commands:
+    - echo Waiting for XMPP service to init...
+    - sleep 15
+
+{% endhighlight %}
+
+Next, you're ready to add a step that runs the XMPP Interop Framework Testing plugin.
+
+{% highlight yaml %}
+
+- name: runtests
+  image: ghcr.io/xmpp-interop-testing/drone-xmpp-test:latest
+  settings:
+    host: xmppserver
+    domain: shakespeare.lit
+    adminAccountUsername: admin
+    adminAccountPassword: admin
+    enabledSpecifications: XEP-0115,XEP-0199,XEP-0352
+
+{% endhighlight %}
+
+The above assumes that your server is running and reachable on the host `xmppserver`, serving the XMPP domain `shakespeare.lit` and that it is provisioned with an administrative account (one that is allowed to create other users, per [XEP-0133](https://xmpp.org/extensions/xep-0133.html)) that uses the username `juliet` and the provided password. You'll find the full range of available configuration options below.
+
+For completeness, here is the full pipeline, combining everything above:
+
+{% highlight yaml %}
+
+when:
+  - event: push
+    branch: main
+
+services:
+  - name: xmppserver
+    image: myorg/xmppserver:latest
+
+steps:
+  - name: wait
+    image: debian:stable-slim
+    commands:
+      - echo Waiting for XMPP service to init...
+      - sleep 15
+  - name: runtests
+    image: ghcr.io/xmpp-interop-testing/drone-xmpp-test:latest
+    settings:
+      host: xmppserver
+      domain: shakespeare.lit
+      adminAccountUsername: admin
+      adminAccountPassword: admin
+      enabledSpecifications: XEP-0115,XEP-0199,XEP-0352
+
+{% endhighlight %}
+
+Woodpecker does not give a detailed overview of what tests succeed, and what test failed (apart from the textual output in the console) and it does not make available the XMPP stanza logs that are generated by the XMPP Interop Framework plugin. To have access to these logs, which are very helpful to [diagnose test failures](/documentation/diagnose-test-failures), the logs can [be published, using a third-party plugin](https://woodpecker-ci.org/plugins) to a storage provider of your choice.
+
+## Configuration
+
+Various options are available when calling _xmpp-interop-testing/drone-xmpp-test_, and whilst none of them are absolutely required, the defaults are unlikely to be perfect for everyone.
+
+| Option                 | Description                                                                                                                                                                                                                                                                           | Default value       |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
+| host                   | IP address or DNS name of the XMPP service to run the tests on.                                                                                                                                                                                                                       | 127.0.0.1           |
+| domain                 | the XMPP domain name of server under test.                                                                                                                                                                                                                                            | example.org         |
+| timeout                | the amount of milliseconds after which an XMPP action (typically an IQ request) is considered timed out.                                                                                                                                                                              | 5000 (five seconds) |
+| adminAccountUsername   | (optional) The account name of a pre-existing user that is allowed to create other users, per [XEP-0133](https://xmpp.org/extensions/xep-0133.html). If not provided, in-band registration ([XEP-0077](https://xmpp.org/extensions/xep-0077.html)) will be used to provision accounts | -                   |
+| adminAccountPassword   | (optional) The password of the admin account                                                                                                                                                                                                                                          | -                   |
+| disabledTests          | (optional) A comma-separated list of tests that are to be skipped. For example: EntityCapsTest,SoftwareInfoIntegrationTest                                                                                                                                                            | -                   |
+| disabledSpecifications | (optional) A comma-separated list of specifications (not case-sensitive) that are to be skipped. For example: XEP-0045,XEP-0060                                                                                                                                                       | -                   |
+| enabledTests           | (optional) A comma-separated list of tests that are the only ones to be run. For example: EntityCapsTest,SoftwareInfoIntegrationTest                                                                                                                                                            | -                   |
+| enabledSpecifications  | (optional) A comma-separated list of specifications (not case-sensitive) that are the only ones to be run. For example: XEP-0045,XEP-0060                                                                                                                                                       | -                   |
+| logDir                 | (optional) The directory in which the test output and logs are to be stored. This directory will be created, if it does not already exist.                                                                                                                                            | ./output            |
+
+For the latest updates to the documentation of the configuration updates, consult the [GitHub repository of the Drone plugin](https://github.com/XMPP-Interop-Testing/xmpp-interop-tests-drone-plugin).
+
+{% include doc-next-steps.html %}
+
+_Splash image courtesy of [Shavr IK, Unsplash](https://unsplash.com/photos/a-close-up-of-a-control-panel-with-buttons-r6fBLCriUgg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
