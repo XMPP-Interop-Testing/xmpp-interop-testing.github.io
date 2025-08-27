@@ -30,7 +30,7 @@ If you'd like to learn how to integrate XMPP standards conformance tests in your
 {% include clickable_logo.html url="/documentation/harness" img="/assets/img/Harness-logo.png" description="Harness" %}
 {% include clickable_logo.html url="/documentation/woodpecker" img="/assets/img/Woodpecker-logo.png" description="Woodpecker" %}
 {% include clickable_logo.html url="/documentation/drone" img="/assets/img/Drone-logo.png" description="Drone" %}
-{% include clickable_logo.html url="/documentation/forgejo" img="/assets/img/Forgejo-logo.png" description="Forgejo, Codeberg" %}
+{% include clickable_logo.html url="/documentation/forgejo" img="/assets/img/Forgejo-logo.png" description="Forgejo" %}
 {% include clickable_logo.html url="/documentation/jenkins" img="/assets/img/Jenkins-logo.png" description="Jenkins" %}
 </div>
 
