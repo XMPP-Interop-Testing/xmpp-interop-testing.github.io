@@ -38,6 +38,7 @@ If you'd like to learn how to integrate XMPP standards conformance tests in your
 
 After integrating our tests in your build pipeline, you might be interested in the following usage documentation.
 
+- [Test account provisioning](/documentation/provisioning-accounts).
 - [Choosing what test to run](/documentation/selecting-tests)
 - [Diagnose test failures](/documentation/diagnose-test-failures)
 
