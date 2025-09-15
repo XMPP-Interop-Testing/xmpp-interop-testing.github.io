@@ -108,20 +108,11 @@ Woodpecker does not give a detailed overview of what tests succeed, and what tes
 
 Various options are available when calling _xmpp-interop-testing/drone-xmpp-test_, and whilst none of them are absolutely required, the defaults are unlikely to be perfect for everyone.
 
-| Option                 | Description                                                                                                                                                                                                                                                                           | Default value       |
-|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|
-| host                   | IP address or DNS name of the XMPP service to run the tests on.                                                                                                                                                                                                                       | 127.0.0.1           |
-| domain                 | the XMPP domain name of server under test.                                                                                                                                                                                                                                            | example.org         |
-| timeout                | the amount of milliseconds after which an XMPP action (typically an IQ request) is considered timed out.                                                                                                                                                                              | 5000 (five seconds) |
-| adminAccountUsername   | (optional) The account name of a pre-existing user that is allowed to create other users, per [XEP-0133](https://xmpp.org/extensions/xep-0133.html). If not provided, in-band registration ([XEP-0077](https://xmpp.org/extensions/xep-0077.html)) will be used to provision accounts | -                   |
-| adminAccountPassword   | (optional) The password of the admin account                                                                                                                                                                                                                                          | -                   |
-| disabledTests          | (optional) A comma-separated list of tests that are to be skipped. For example: EntityCapsTest,SoftwareInfoIntegrationTest                                                                                                                                                            | -                   |
-| disabledSpecifications | (optional) A comma-separated list of specifications (not case-sensitive) that are to be skipped. For example: XEP-0045,XEP-0060                                                                                                                                                       | -                   |
-| enabledTests           | (optional) A comma-separated list of tests that are the only ones to be run. For example: EntityCapsTest,SoftwareInfoIntegrationTest                                                                                                                                                            | -                   |
-| enabledSpecifications  | (optional) A comma-separated list of specifications (not case-sensitive) that are the only ones to be run. For example: XEP-0045,XEP-0060                                                                                                                                                       | -                   |
-| logDir                 | (optional) The directory in which the test output and logs are to be stored. This directory will be created, if it does not already exist.                                                                                                                                            | ./output            |
-
 For the latest updates to the documentation of the configuration updates, consult the [GitHub repository of the Drone plugin](https://github.com/XMPP-Interop-Testing/xmpp-interop-tests-drone-plugin).
+
+{% include doc-conf-table.html %}
+
+{% include doc-conf-provision.html %}
 
 {% include doc-next-steps.html %}
 
