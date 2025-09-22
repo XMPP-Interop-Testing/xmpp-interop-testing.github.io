@@ -57,4 +57,33 @@ If an option to both enable and disable tests is provided, then both apply - tes
 
 That's all there is to it!
 
+## Working with tests that are impossible to run
+
+Some tests may be impossible to run, for example, because the server that's being tested does not support a particular
+feature. The test suite will detect such cases gracefully, and mark the test as 'impossible to run'. In the execution
+summary that's provided after the test run has completed, a list of all 'impossible to run' tests is shown, as shown
+in this example:
+
+```plain
+Test run (id: e8xpi) finished! 2 tests were successful (✔), 0 failed (💀), and 6 were impossible to run (✖).
+Results aggregated by specification:
+• XEP-0199: XMPP Ping                  2 ✔  0 💀   0 ✖
+• XEP-0215: External Service Discovery 0 ✔  0 💀   6 ✖
+✖ The following tests were impossible to run! ✖
+• XEP-0215: could not run 6 test(s) because: Unable to find any service on domain that supports XEP-0215 External Service Discovery.
+```
+
+It is not unreasonable for anyone to assume that, upon a successful test execution result, _all_ tests have passed. In
+the case of 'impossible' tests, this isn't necessarily the case: some test might not have executed at all.
+
+Especially in scenarios where you have configured the test run to enable a specific subset of the tests (through
+configuration such as `enabledTests` and `enabledSpecifications`) it may be desirable to hard fail when a test was
+impossible to execute. This enforces that a test run was strictly successful in all tests it was configured to execute.
+
+To enforce failure when one or more of the scheduled tests were impossible to run, the following option can be used:
+
+- `failOnImpossibleTest` - If set to `true`, fails the test run if any configured tests were impossible to execute.
+
+The property defaults to `false`.
+
 _Splash image courtesy of [Rima Kruciene, Unsplash](https://unsplash.com/photos/black-and-white-audio-controller-close-up-photo-gpKe3hmIawg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
