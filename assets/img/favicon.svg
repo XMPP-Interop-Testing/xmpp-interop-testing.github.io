@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1220)"><rect width="1000" height="1000" fill="#ffffff"></rect><g transform="matrix(1.5,0,0,1.5,50,50)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="600"><svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Chain 1 (Purple) right half -->
+  <rect x="120" y="70" width="360" height="200" rx="100" style="stroke:#FFFFFF; stroke-width:60; fill-opacity:0" transform="rotate(180, 300, 300)" clip-path="rect(0% 50% 100% 0%) stroke-box"></rect>
+  <rect x="120" y="70" width="360" height="200" rx="100" style="stroke:#1b3967; stroke-width:40; fill-opacity:0" transform="rotate(180, 300, 300)" clip-path="rect(0% 50% 100% 0%) stroke-box"></rect>
+
+  <!-- Chain 2 (Green) -->
+  <rect x="120" y="70" width="360" height="200" rx="100" style="stroke:#FFFFFF; stroke-width:60; fill-opacity:0" transform="rotate(60, 300, 300)"></rect>
+  <rect x="120" y="70" width="360" height="200" rx="100" style="stroke:#439639; stroke-width:40; fill-opacity:0" transform="rotate(60, 300, 300)"></rect>
+
+  <!-- Chain 2 (Orange) -->
+  <rect x="120" y="70" width="360" height="200" rx="100" style="stroke:#FFFFFF; stroke-width:60; fill-opacity:0" transform="rotate(300, 300, 300)"></rect>
+  <rect x="120" y="70" width="360" height="200" rx="100" style="stroke:#d9541e; stroke-width:40; fill-opacity:0" transform="rotate(300, 300, 300)"></rect>
+
+  <!-- Chain 1 (Purple) left half -->
+  <rect x="120" y="70" width="360" height="200" rx="100" style="stroke:#FFFFFF; stroke-width:60; fill-opacity:0" transform="rotate(180, 300, 300)" clip-path="rect(0% 100% 100% 50%) stroke-box"></rect>
+  <rect x="120" y="70" width="360" height="200" rx="100" style="stroke:#002b5c; stroke-width:40; fill-opacity:0" transform="rotate(180, 300, 300)" clip-path="rect(0% 100% 100% 50%) stroke-box"></rect>
+</svg></svg></g></g><defs><clipPath id="SvgjsClipPath1220"><rect width="1000" height="1000" x="0" y="0" rx="350" ry="350"></rect></clipPath></defs></svg>
