@@ -59,7 +59,7 @@ navbar-links:
   Contact: contact
   Blog: blog
 
-avatar: "/assets/img/nlnet.hex.svg"
+avatar: "/assets/img/xmpp-interop-testing-logo.svg"
 round-avatar: false
 
 social-network-links:
@@ -78,3 +78,10 @@ collections:
 
 site-css:
   - "/assets/css/custom-styles.css"
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      head-extra: header-favicon.html
