@@ -85,3 +85,5 @@ We added CI to run a podman and Docker build on every PR to the repo, just to be
 Next, we added CI to the main branch to build and push a "bleeding edge" image to a container registry. We chose GitHub because (a) it's with our code (b) it has OCI support. The same CI also deals with publishing tagged images when the repo is tagged.
 
 It's exciting! With containerised servers and containerised tests, there's far less onus on developers to manage dependencies or be dependent on operating systems or versions. Not only does this reduce the barrier to entry for folks wanting to adopt the tests, it's also far easier for me!
+
+_Splash image courtesy of [CHUTTERSNAP, Unsplash](https://unsplash.com/photos/birds-photo-of-cityscape-9cCeS9Sg6nU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash)_
