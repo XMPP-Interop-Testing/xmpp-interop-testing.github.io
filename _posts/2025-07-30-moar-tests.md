@@ -71,4 +71,4 @@ more CI/CD platforms!
 
 Please [get in touch](/contact) if you have any ideas for improvement, or other feedback. We'd love to hear from you!
 
-- _Splash image courtesy of [Imagine Buddy, Unsplash](https://unsplash.com/photos/a-person-placing-a-piece-of-wood-into-a-pyramid-vsLbaIdhwaU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
+_Splash image courtesy of [Imagine Buddy, Unsplash](https://unsplash.com/photos/a-person-placing-a-piece-of-wood-into-a-pyramid-vsLbaIdhwaU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_

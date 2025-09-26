@@ -70,5 +70,5 @@ I'm also contemplating asking one or two server developers, that are unfamiliar 
 
 Until next time!
 
-- _Splash image courtesy of [Isaac Smith, Unsplash](https://unsplash.com/@isaacmsmith?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
+_Splash image courtesy of [Isaac Smith, Unsplash](https://unsplash.com/@isaacmsmith?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
   

@@ -21,4 +21,4 @@ Similarly, If there's a CI system that you're using that you'd like us to suppor
 
 Test all the things!!!1!
 
-- _Splash image courtesy of [Clay Banks, Unsplash](https://unsplash.com/@claybanks?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
+_Splash image courtesy of [Clay Banks, Unsplash](https://unsplash.com/@claybanks?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_

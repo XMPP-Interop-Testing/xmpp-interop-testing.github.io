@@ -27,4 +27,4 @@ information in our [documentation on Selecting Tests](/documentation/selecting-t
 
 Please [let us know](/contact) if you like the new features. We'd love to hear from you!
 
-- _Splash image courtesy of [Heeren Darji, Unsplash](https://unsplash.com/@heerenaway?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
+_Splash image courtesy of [Heeren Darji, Unsplash](https://unsplash.com/@heerenaway?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)_
