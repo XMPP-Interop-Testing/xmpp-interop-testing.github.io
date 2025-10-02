@@ -28,7 +28,7 @@ stage('test-server') {
 
 {% endhighlight %}
 
-The above assumes that when your server runs is running and reachable on the domain `shakespeare.lit` and that it is provisioned with an administrative account (one that is allowed to create other users, per [XEP-0133](https://xmpp.org/extensions/xep-0133.html)) that uses the username `juliet` and the provided password.
+This example demonstrates one possible way to provision accounts. It assumes your server is running and accessible at `shakespeare.lit`, and that it already has an administrative account (one that is allowed to create other users, per [XEP-0133](https://xmpp.org/extensions/xep-0133.html)) that uses the username `juliet` and the provided password. Other configuration methods are also available.
 
 For the full list of options available to the docker image, including how to persist logs, limit the scope of the tests, or explicitly set a host rather than relying on DNS, see the [Docker](/documentation/docker) instructions.
 

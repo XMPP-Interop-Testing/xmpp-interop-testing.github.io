@@ -26,7 +26,7 @@ Assuming that you have a pre-existing pipeline that build your server and starts
 
 {% endhighlight %}
 
-The above assumes that your server is running and reachable on the host `xmppserver`, serving the XMPP domain `shakespeare.lit`. You'll find the full range of available configuration options below.
+This example demonstrates one possible way to provision accounts. It assumes your server is running and reachable on the host `xmppserver`, serving the XMPP domain `shakespeare.lit`, and that it supports In-Band Registration (as defined in [XEP-0077](https://xmpp.org/extensions/xep-0077.html)) to provision accounts. Other configuration methods are also available, and you can explore the full set of options in the sections below.
 
 ## A Full Example
 

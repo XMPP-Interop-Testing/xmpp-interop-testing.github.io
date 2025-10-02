@@ -24,8 +24,7 @@ Assuming that you have a pre-existing pipeline that build your server and starts
 
 {% endhighlight %}
 
-
-The above assumes that your server is running and reachable on the domain `shakespeare.lit` and that it is provisioned with an administrative account (one that is allowed to create other users, per [XEP-0133](https://xmpp.org/extensions/xep-0133.html)) that uses the username `juliet` and the provided password. You'll find the full range of available configuration options below.
+This example demonstrates one possible way to provision accounts. It assumes your server is running and accessible at `shakespeare.lit`, and that it already has an administrative account (one that is allowed to create other users, per [XEP-0133](https://xmpp.org/extensions/xep-0133.html)) that uses the username `juliet` and the provided password. Other configuration methods are also available, and you can explore the full set of options in the sections below.
 
 ## A Full Example
 
