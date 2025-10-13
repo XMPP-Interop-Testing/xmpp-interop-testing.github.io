@@ -17,7 +17,7 @@ Assuming that you have a pre-existing pipeline that build your server and starts
 {% highlight yaml %}
 
 - name: Run XMPP Interoperability Tests against CI server.
-  uses: XMPP-Interop-Testing/xmpp-interop-tests-action@v1.6.0
+  uses: XMPP-Interop-Testing/xmpp-interop-tests-action@v1.7.2
   with:
     domain: 'shakespeare.lit'
     adminAccountUsername: 'juliet'
@@ -93,7 +93,7 @@ To run our Interoperability Tests, only one step needs to be added to this:
 {% highlight yaml %}
 
       - name: Run XMPP Interoperability Tests against CI server.
-        uses: XMPP-Interop-Testing/xmpp-interop-tests-action@v1.6.0
+        uses: XMPP-Interop-Testing/xmpp-interop-tests-action@v1.7.2
         with:
           domain: 'shakespeare.lit'
           adminAccountUsername: 'juliet'
@@ -148,7 +148,7 @@ jobs:
         run: ./ci-scripts/execute-tests # Run tests that already existed in your pipeline
 
       - name: Run XMPP Interoperability Tests against CI server
-        uses: XMPP-Interop-Testing/xmpp-interop-tests-action@v1.6.0
+        uses: XMPP-Interop-Testing/xmpp-interop-tests-action@v1.7.2
         with:
           domain: 'shakespeare.lit'
           adminAccountUsername: 'juliet'
