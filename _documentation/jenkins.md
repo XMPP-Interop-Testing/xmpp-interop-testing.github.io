@@ -19,7 +19,7 @@ Assuming you already have a build pipeline and a scriptable method of launching 
 stage('test-server') {
     steps {
         sh "docker run \
-                ghcr.io/xmpp-interop-testing/xmpp_interop_tests:v1.6.1 \
+                ghcr.io/xmpp-interop-testing/xmpp_interop_tests:v1.7.2 \
                 --domain=shakespeare.lit \
                 --adminAccountUsername=juliet \
                 --adminAccountPassword=O_Romeo_Romeo!"
@@ -39,7 +39,7 @@ For the full list of options available to the docker image, including how to per
 pipeline {
     agent any
     environment {
-        INTEROP_TESTS_VERSION = 'v1.6.1'
+        INTEROP_TESTS_VERSION = 'v1.7.2'
     }
     stages {
         stage('build-server') {
