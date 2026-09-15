@@ -17,7 +17,7 @@ into a single extensible envelope instead of a fixed sequence of steps, and ever
 [Bind 2 (XEP-0386)](https://xmpp.org/extensions/xep-0386.html) folds resource binding and feature enablement into that
 same envelope, so a client can walk away with a fully set-up session in (almost) one shot. And
 [FAST (XEP-0484)](https://xmpp.org/extensions/xep-0484.html) lets a client swap its password for a short-lived, rotating
-token and authenticate in a single round-trip, no SCRAM handshake required.
+token and reconnect to the server, authenticated, in a single round-trip, no SCRAM handshake required.
 
 Put together, a client can go from opening a socket to fully authenticated and ready to send in essentially one
 round-trip. That's also exactly the kind of multi-XEP choreography where servers tend to disagree on the details, so
