@@ -17,7 +17,7 @@ Assuming that you have a pre-existing pipeline that build your server and starts
 {% highlight yaml %}
 
 - name: Run XMPP Interoperability Tests against CI server.
-  uses: https://codeberg.org/XMPP-Interop-Testing/xmpp-interop-tests-forgejo-action@v1.7.2
+  uses: https://codeberg.org/XMPP-Interop-Testing/xmpp-interop-tests-forgejo-action@v1.8.0
   with:
     domain: 'shakespeare.lit'
     adminAccountUsername: 'juliet'
@@ -49,7 +49,7 @@ Next, you're ready to add a step that runs the XMPP Interop Framework Testing pl
 
 steps:
   - name: Run the XMPP Interop Tests
-    uses: https://codeberg.org/XMPP-Interop-Testing/xmpp-interop-tests-forgejo-action@v1.7.2
+    uses: https://codeberg.org/XMPP-Interop-Testing/xmpp-interop-tests-forgejo-action@v1.8.0
     with:
       host: xmppserver
       domain: 'shakespeare.lit'
@@ -73,7 +73,7 @@ jobs:
         image: myorg/xmppserver:latest
     steps:
       - name: Run the XMPP Interop Tests
-        uses: https://codeberg.org/XMPP-Interop-Testing/xmpp-interop-tests-forgejo-action@v1.7.2
+        uses: https://codeberg.org/XMPP-Interop-Testing/xmpp-interop-tests-forgejo-action@v1.8.0
         with:
           host: xmppserver
           domain: 'shakespeare.lit'
