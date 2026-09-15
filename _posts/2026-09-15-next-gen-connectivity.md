@@ -15,7 +15,7 @@ stream management, sync the archive. Each one is its own request. Fine on wifi, 
 XMPP offers various XEPs to fix that. [SASL2 (XEP-0388)](https://xmpp.org/extensions/xep-0388.html) turns authentication
 into a single extensible envelope instead of a fixed sequence of steps, and everything else here builds on it.
 [Bind 2 (XEP-0386)](https://xmpp.org/extensions/xep-0386.html) folds resource binding and feature enablement into that
-same envelope, so a client can walk away with a fully set-up session in one shot. And
+same envelope, so a client can walk away with a fully set-up session in (almost) one shot. And
 [FAST (XEP-0484)](https://xmpp.org/extensions/xep-0484.html) lets a client swap its password for a short-lived, rotating
 token and authenticate in a single round-trip, no SCRAM handshake required.
 
